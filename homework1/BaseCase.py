@@ -3,15 +3,13 @@ from ui.locators import MainPageLocators, ConstactInformationPageLocators
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException
+from userinfo import PASSWORD, LOGIN
 import random
-
-
-LOGIN = "doychevvs@gmail.com"
-PASSWORD = "uP@!_J-azC2Z!bg"
 
 
 class BaseCase:
     driver = None
+    NUMBERS_FOR_RANDOM_VALUE = '123456789'
 
     @pytest.fixture(scope='function', autouse=True)
     def setup(self, driver):
@@ -61,10 +59,10 @@ class BaseCase:
     def change_contact_information(self):
         name_field = self.find(ConstactInformationPageLocators.NAME_FIELD)
         name_field.clear()
-        name_field.send_keys(''.join([random.choice(list('123456789')) for x in range(12)]))
+        name_field.send_keys(''.join([random.choice(list(self.NUMBERS_FOR_RANDOM_VALUE)) for x in range(12)]))
         phone_field = self.find(ConstactInformationPageLocators.PHONE_FIELD)
         phone_field.clear()
-        phone_field.send_keys(''.join([random.choice(list('123456789')) for x in range(12)]))
+        phone_field.send_keys(''.join([random.choice(list(self.NUMBERS_FOR_RANDOM_VALUE)) for x in range(12)]))
         save_button = self.find(ConstactInformationPageLocators.SAVE_BUTTON)
         save_button.click()
 
@@ -106,24 +104,3 @@ class BaseCase:
     def should_be_authorization_user_title(self):
         assert self.is_element_present(*MainPageLocators.AUTHORIZATION_USER_TITLE), \
             "authorization title is not presented"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

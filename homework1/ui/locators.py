@@ -10,7 +10,8 @@ class MainPageLocators():
     USER_WRAP = (By.CSS_SELECTOR, '[class^= "right-module-userNameWrap"]')
     LOGOUT_BUTTON = (By.CSS_SELECTOR, '[href= "/logout"]')
     AUTHORIZATION_USER_TITLE = (By.CSS_SELECTOR, '[class^="instruction-module-title"]')
-
+    SEGMENTS_ICON = (By.CSS_SELECTOR, '[href="/segments"]')
+    STATISTICS_ICON = (By.CSS_SELECTOR, '[href="/statistics"]')
 
 
 class ConstactInformationPageLocators():
