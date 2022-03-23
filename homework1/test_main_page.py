@@ -4,6 +4,7 @@ from BaseCase import BaseCase
 
 
 class TestExample(BaseCase):
+
     MAIN_PAGE_LINK = "https://target.my.com/"
     CONTACT_INFO_PAGE_LINK = "https://target.my.com/profile/contacts"
 
@@ -15,7 +16,6 @@ class TestExample(BaseCase):
         self.should_be_login_form()
         self.autorizathion()
         self.should_be_authorization_user_title()
-
 
     @pytest.mark.UI
     def test_user_logout(self):
@@ -30,7 +30,6 @@ class TestExample(BaseCase):
         self.logout()
         self.should_be_open_login_form_button()
 
-
     @pytest.mark.UI
     def test_user_change_contact_information(self):
         self.go_to_page(self.MAIN_PAGE_LINK)
@@ -43,7 +42,6 @@ class TestExample(BaseCase):
         self.should_be_contact_info_title()
         self.change_contact_information()
         self.should_be_success_text()
-
 
     @pytest.mark.UI
     @pytest.mark.parametrize(

@@ -17,6 +17,6 @@ class MainPageLocators():
 class ConstactInformationPageLocators():
     NAME_FIELD = (By.CSS_SELECTOR, '[data-name="fio"] .input__inp')
     PHONE_FIELD = (By.CSS_SELECTOR, '[data-name="phone"] .input__inp')
-    SAVE_BUTTON = (By.CSS_SELECTOR, '[class="button button_submit"]')
+    SAVE_BUTTON = (By.CSS_SELECTOR, '.button__text')
     CONTACT_INFO_TITLE = (By.CSS_SELECTOR, '[data-translated="Contact information"]')
     SUCCESS_TEXT = (By.CSS_SELECTOR, '[data-class-name="SuccessView"] > ._notification__content')
